@@ -1,0 +1,8 @@
+<!-- books/templates/books/author_form.html -->
+<h1>Create Author</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Render the form fields -->
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'author_list' %}">Back to Author List</a>

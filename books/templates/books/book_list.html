@@ -1,0 +1,14 @@
+<!-- books/templates/books/book_list.html -->
+<h1>Book List</h1>
+<a href="{% url 'book_create' %}">Add Book</a>
+
+<ul>
+    {% for book in books %}
+        <li>
+            <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a> 
+            - Author: {{ book.author.name }} 
+            - <a href="{% url 'book_update' book.id %}">Edit</a>
+            - <a href="{% url 'book_delete' book.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
